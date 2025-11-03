@@ -1,0 +1,167 @@
+.navbar {
+  padding: 20px 30px;
+  width: 100%;
+  background-color: whitesmoke;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1400px;
+  margin: auto;
+
+  position: sticky;
+  top: 0;
+  z-index: 5;
+}
+
+.navbar>.logo-div img {
+  width: 150px;
+}
+
+.nav-div {
+  display: flex;
+  align-items: center !important;
+}
+
+a {
+  text-decoration: none !important;
+}
+
+.nav-div ul {
+  list-style-type: none;
+  display: flex;
+  gap: 15px;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-div ul li a p {
+  margin: 0;
+}
+
+.side-div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.side-div img {
+  width: 20px;
+  cursor: pointer;
+}
+
+.side-div .cart-div {
+  position: relative;
+  cursor: pointer;
+}
+
+.cart-div p {
+  position: absolute;
+  right: -10px;
+  bottom: -10px;
+  z-index: 20;
+  
+  color: white;
+  background-color: black;
+  border-radius: 100%;
+  width: 20px;
+  height: 20px;
+  font-size: 10px;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.side-div .menu-btn {
+  display: none;
+}
+
+.sidebar {
+  animation: sidebar-2 0.3s linear !important;
+  width: 100vw;
+  height: 100vh !important;
+  height: fit-content;
+  background-color: green;
+  position: absolute;
+  transform: translateX(100vw) !important;
+  display: none;
+}
+
+.sidebar-active {
+  animation: sidebar 0.2s linear;
+  width: 100vw;
+  height: fit-content;
+  position: fixed;
+  background-color: white;
+  right: 0;
+  top: 0;
+  z-index: 3;
+}
+
+.sidebar-active>* {
+  z-index: 4;
+}
+
+.sidebar-head {
+  padding: 20px 10px;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 10px;
+  color: grey;
+}
+
+.sidebar-head img {
+  width: 20px;
+  cursor: pointer;
+  margin-left: 20px;
+}
+
+.sidebar-head p {
+  cursor: pointer;
+}
+
+.sidebar-body ul {
+  list-style-type: none;
+}
+
+.sidebar-body ul a {
+  /* padding: 15px 20px; */
+  display: block;
+  text-decoration: none;
+}
+
+
+
+@keyframes sidebar {
+  from {
+    transform: translateX(100vw);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes sidebar-2 {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(100vw);
+  }
+}
+
+
+@media (max-width: 750px) {
+  .nav-div {
+    display: none;
+  }
+
+  .menu-btn {
+    display: block !important;
+  }
+}
